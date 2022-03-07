@@ -62,7 +62,7 @@ def test_home(base_url, is_indexed):
     else:
         assert content == "noindex, nofollow"
     html = PyQuery(resp.text)
-    assert html.find("head > title").text() == "MDN Web Docs"
+    assert html.find("head > title").text() == "TechnoBureau"
 
 
 def test_hreflang_basic(base_url):

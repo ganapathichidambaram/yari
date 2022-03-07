@@ -110,14 +110,14 @@ function RedesignAnnouncementBanner({
       <p className="mdn-cta-copy">
         ✨{" "}
         <a
-          href="https://hacks.mozilla.org/2022/02/a-new-year-a-new-mdn/"
+          href="https://www.google.com/"
           target="_blank"
           rel="noopener noreferrer"
           onClick={onCTAClick}
         >
           Learn more
         </a>{" "}
-        about MDN Web Docs' new design.
+        TechnoBureau.
       </p>
     </Banner>
   );

@@ -25,13 +25,13 @@ export function TopNavigation() {
   */
   const assistiveText = showMainMenu ? "Close main menu" : "Open main menu";
   const route = location.pathname.substring(location.pathname.indexOf("/", 1));
-  const dark = DARK_NAV_ROUTES.some((r) => route.match(r));
+  //const dark = DARK_NAV_ROUTES.some((r) => route.match(r));
   const transparent = TRANSPARENT_NAV_ROUTES.some((r) => route.match(r));
 
   return (
     <header
       className={`top-navigation${showMainMenu ? " show-nav" : ""}
-      ${dark ? " dark" : ""}
+
       ${transparent ? " is-transparent" : ""}`}
     >
       <Container>

@@ -152,9 +152,9 @@ export default function render(
   const rendered = renderToString(renderApp);
 
   if (!pageTitle) {
-    pageTitle = "MDN Web Docs"; // default
+    pageTitle = "TechnoBureau"; // default
   }
-  let canonicalURL = "https://developer.mozilla.org";
+  let canonicalURL = "https://technobureau.com";
 
   let pageDescription = "";
 

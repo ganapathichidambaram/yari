@@ -14,12 +14,28 @@ export const GuidesMenu = ({ visibleSubMenuId, toggleMenu }) => {
     id: "guides",
     items: [
       {
-        description: "Learn web development",
+        description: "Learning Technology",
         extraClasses: "apis-link-container",
         hasIcon: true,
         iconClasses: "submenu-icon learn",
-        label: "MDN Learning Area",
+        label: "Learning Area",
         url: `/${locale}/docs/Learn`,
+      },
+      {
+        description: "Learn various Linux technologies , packages",
+        extraClasses: "html-link-container",
+        hasIcon: true,
+        iconClasses: "submenu-icon linux",
+        label: "LINUX",
+        url: `/${locale}/docs/Learn/Linux`,
+      },
+      {
+        description: "Learn Devops to automate infrastructure",
+        extraClasses: "css-link-container",
+        hasIcon: true,
+        iconClasses: "submenu-icon devops",
+        label: "DevOps",
+        url: `/${locale}/docs/Learn/DevOps`,
       },
       {
         description: "Learn to structure web content with HTML",
@@ -44,13 +60,6 @@ export const GuidesMenu = ({ visibleSubMenuId, toggleMenu }) => {
         iconClasses: "submenu-icon javascript",
         label: "JavaScript",
         url: `/${locale}/docs/Learn/JavaScript`,
-      },
-      {
-        description: "Learn to make the web accessible to all",
-        hasIcon: true,
-        iconClasses: "submenu-icon",
-        label: "Accessibility",
-        url: `/${locale}/docs/Web/Accessibility`,
       },
     ],
   };

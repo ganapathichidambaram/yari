@@ -1,11 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 
 import { GuidesMenu } from "../guides-menu";
-import { ReferenceMenu } from "../reference-menu";
-import { PlusMenu } from "../plus-menu";
+import { ToolsMenu } from "../tools-menu";
 
 import "./index.scss";
-import { ENABLE_PLUS } from "../../../constants";
 
 export default function MainMenu({ isOpenOnMobile }) {
   const previousActiveElement = useRef<null | HTMLButtonElement>(null);
@@ -63,20 +61,14 @@ export default function MainMenu({ isOpenOnMobile }) {
   return (
     <nav className="main-nav" aria-label="Main menu">
       <ul className="main-menu nojs" ref={mainMenuRef}>
-        <ReferenceMenu
-          visibleSubMenuId={visibleSubMenuId}
-          toggleMenu={toggleMenu}
-        />
         <GuidesMenu
           visibleSubMenuId={visibleSubMenuId}
           toggleMenu={toggleMenu}
         />
-        {ENABLE_PLUS && (
-          <PlusMenu
-            visibleSubMenuId={visibleSubMenuId}
-            toggleMenu={toggleMenu}
-          />
-        )}
+        <ToolsMenu
+          visibleSubMenuId={visibleSubMenuId}
+          toggleMenu={toggleMenu}
+        />
       </ul>
     </nav>
   );

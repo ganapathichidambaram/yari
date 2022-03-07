@@ -17,8 +17,8 @@ export function Logo() {
   const docs = isDocs(location.pathname);
 
   return (
-    <a href={`/${locale}/`} className="logo" aria-label="MDN homepage">
-      {(plus && <MDNPlusLogo />) || (docs && <MDNDocsLogo />) || <MDNLogo />}
+    <a href={`/${locale}/`} className="logo" aria-label="Homepage">
+      TechnoBureau
     </a>
   );
 }

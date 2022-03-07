@@ -6,7 +6,7 @@ export function HomeHero() {
   return (
     <div className="hero">
       <div className="hero-content">
-        <h1>Resources for developers, by developers.</h1>
+        <h1>TechnoBureau</h1>
         <ul>
           <li>
             <a href="/en-US/docs/Web">Web Technologies</a>

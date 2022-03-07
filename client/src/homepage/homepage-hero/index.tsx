@@ -6,13 +6,10 @@ export function HomepageHero() {
   return (
     <div className="homepage-hero dark">
       <section>
-        <h1>
-          Resources for <u>Developers</u>,
-          <br /> by Developers
-        </h1>
+        <h1>TechnoBureau</h1>
         <p>
-          Documenting web technologies, including CSS, HTML, and JavaScript,
-          since 2005.
+          A System will provide technical information through guides and tools
+          for various topic such as Linux, Docker, Ansible and other DevOps.
         </p>
         <Search id="hp-search" />
       </section>

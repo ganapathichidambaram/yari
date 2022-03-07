@@ -1,9 +1,9 @@
 {
   "name": "@mdn/yari",
-  "version": "0.1.6",
+  "version": "0.7.5",
   "repository": "https://github.com/mdn/yari",
   "license": "MPL-2.0",
-  "author": "MDN Web Docs",
+  "author": "TechnoBureau",
   "scripts": {
     "analyze": "source-map-explorer 'client/build/static/js/*.js'",
     "analyze:css": "source-map-explorer 'client/build/static/css/*.css'",
@@ -15,7 +15,7 @@
     "filecheck": "cd filecheck && node cli.js",
     "md": "ts-node markdown/cli.ts",
     "prepare": "husky install",
-    "prepare-build": "yarn build:client && yarn build:ssr && yarn tool optimize-client-build && yarn tool google-analytics-code && yarn tool spas && yarn tool gather-git-history && yarn tool build-robots-txt && yarn tool popularities",
+    "prepare-build": "yarn build:client && yarn build:ssr && yarn tool optimize-client-build && yarn tool google-analytics-code && yarn tool spas && yarn tool build-robots-txt",
     "prettier-check": "prettier --check .",
     "prettier-format": "prettier --write .",
     "start": "(test -f client/build/index.html || yarn build:client) && (test -f ssr/dist/main.js || yarn build:ssr) && (test -d client/build/en-us/_spas || yarn tool spas) && nf -j Procfile.start start",
@@ -192,6 +192,6 @@
     "webpack-node-externals": "^3.0.0"
   },
   "engines": {
-    "node": ">=12.11.0 <17.0.0"
+    "node": ">=12.11.0 <19.0.0"
   }
 }
