@@ -23,7 +23,7 @@ const CONTRIBUTOR_SPOTLIGHT_ROOT = correctContentPathFromEnv(
 // the repository on GitHub.
 // E.g. `'https://github.com/' + REPOSITORY_URLS[document.fileInfo.root]`
 const REPOSITORY_URLS = {
-  [CONTENT_ROOT]: "mdn/content",
+  [CONTENT_ROOT]: "technobureau/content",
 };
 
 // Make a combined array of all truthy roots. This way, you don't
@@ -32,7 +32,7 @@ const REPOSITORY_URLS = {
 const ROOTS = [CONTENT_ROOT];
 if (CONTENT_TRANSLATED_ROOT) {
   ROOTS.push(CONTENT_TRANSLATED_ROOT);
-  REPOSITORY_URLS[CONTENT_TRANSLATED_ROOT] = "mdn/translated-content";
+  REPOSITORY_URLS[CONTENT_TRANSLATED_ROOT] = "technobureau/translated-content";
 }
 
 function correctContentPathFromEnv(envVarName) {

@@ -1,7 +1,7 @@
 {
-  "name": "@mdn/yari",
+  "name": "@technobureau/yari",
   "version": "0.7.5",
-  "repository": "https://github.com/mdn/yari",
+  "repository": "https://github.com/technobureau/yari",
   "license": "MPL-2.0",
   "author": "TechnoBureau",
   "scripts": {

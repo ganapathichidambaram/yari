@@ -166,7 +166,7 @@ async function buildSPAs(options) {
   // Build all the home pages in all locales.
   // Fetch merged content PRs for the latest contribution section.
   const pullRequestsData = await got(
-    "https://api.github.com/search/issues?q=repo:mdn/content+is:pr+is:merged+sort:updated&per_page=10"
+    "https://api.github.com/search/issues?q=repo:ganapathichidambaram/content+is:pr+is:merged+sort:updated&per_page=10"
   ).json();
 
   for (const root of [CONTENT_ROOT, CONTENT_TRANSLATED_ROOT]) {
@@ -185,7 +185,10 @@ async function buildSPAs(options) {
       const hyData = {
         pullRequestsData: {
           items: pullRequestsData.items,
-          repo: { name: "mdn/content", url: "https://github.com/mdn/content" },
+          repo: {
+            name: "technobureau/content",
+            url: "https://github.com/technobureau/content",
+          },
         },
         featuredContributor,
       };

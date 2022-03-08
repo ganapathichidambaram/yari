@@ -58,7 +58,7 @@ export function Homepage(props) {
 
             <div className="article-tile">
               <a href={`/${locale}/docs/Learn/JavaScript`} className="tile-tag">
-                Web APIs
+                JavaScript
               </a>
               <a
                 href={`/${locale}/docs/Learn/JavaScript/First_steps`}

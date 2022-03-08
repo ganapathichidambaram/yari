@@ -194,7 +194,7 @@ export default function render(
         // See https://developers.google.com/search/docs/advanced/crawling/localized-versions?hl=en&visit_id=637411409912568511-3980844248&rd=1#language-codes
         $('<link rel="alternate">')
           .attr("title", translation.title)
-          .attr("href", `https://developer.mozilla.org${translationURL}`)
+          .attr("href", `https://technobureau.com${translationURL}`)
           .attr("hreflang", getHrefLang(translation.locale, allOtherLocales))
           .insertAfter("title");
       }

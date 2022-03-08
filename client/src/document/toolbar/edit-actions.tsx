@@ -82,10 +82,10 @@ export function EditActions({
 
       <li>
         <a
-          href={`https://developer.mozilla.org/${locale}/docs/${slug}`}
+          href={`https://technobureau.com/${locale}/docs/${slug}`}
           className="button"
         >
-          View on MDN
+          View on TechnoBureau
         </a>
       </li>
 

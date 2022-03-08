@@ -102,7 +102,7 @@ function checkImageReferences(doc, $, options, { url, rawContent }) {
             explanation: "Insecure URL",
             suggestion: absoluteURL.toString(),
           });
-        } else if (absoluteURL.hostname === "developer.mozilla.org") {
+        } else if (absoluteURL.hostname === "technobureau.com") {
           // Suppose they typed this:
           // <img src=https://developer.mozilla.org/en-US/docs/Foo/img.png>
           // and the current page you're on is /en-US/docs/Foo then the

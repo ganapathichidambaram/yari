@@ -148,7 +148,7 @@ export function Contribute() {
           Ready to become an active part of the MDN community but not sure where
           to begin? We've got you covered. See our step-by-step directions to{" "}
           <a
-            href="https://github.com/mdn/content/#readme"
+            href="https://github.com/technobureau/content/#readme"
             target="_blank"
             rel="noreferrer noopener"
             className="external"

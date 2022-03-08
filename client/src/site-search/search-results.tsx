@@ -200,7 +200,7 @@ function RemoteSearchWarning() {
     // actively worked-on content isn't showing up in searches.
     // The default value in the server is not accessible from the react app,
     // so it's hardcoded here in the client.
-    const kumaHost = process.env.REACT_APP_KUMA_HOST || "developer.mozilla.org";
+    const kumaHost = process.env.REACT_APP_KUMA_HOST || "technobureau.com";
     return (
       <NoteCard type="warning">
         <h4>Note!</h4>

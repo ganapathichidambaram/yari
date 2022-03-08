@@ -35,7 +35,7 @@ function normalizeBCDURLs(doc, options) {
       return absURL;
     }
     const u = new URL(absURL);
-    if (u.hostname !== "developer.mozilla.org") {
+    if (u.hostname !== "technobureau.com") {
       // If URL is from a different host, return without modifying it
       return absURL;
     }
