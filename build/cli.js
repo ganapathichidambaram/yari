@@ -227,10 +227,11 @@ async function buildDocuments(
       locale.toLowerCase()
     );
     fs.mkdirSync(sitemapDir, { recursive: true });
-    const sitemapFilePath = path.join(sitemapDir, "sitemap.xml.gz");
+    const sitemapFilePath = path.join(sitemapDir, "sitemap.xml");
     fs.writeFileSync(
       sitemapFilePath,
-      zlib.gzipSync(makeSitemapXML(locale, docs))
+      makeSitemapXML(locale, docs)
+      //zlib.gzipSync(makeSitemapXML(locale, docs))
     );
     sitemapsBuilt.push(sitemapFilePath);
   }

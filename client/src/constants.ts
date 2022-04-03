@@ -1,5 +1,5 @@
 export const DISABLE_AUTH = Boolean(
-  JSON.parse(process.env.REACT_APP_DISABLE_AUTH || "false")
+  JSON.parse(process.env.REACT_APP_DISABLE_AUTH || "true")
 );
 
 export const CRUD_MODE = Boolean(
@@ -22,19 +22,7 @@ export const CRUD_MODE_HOSTNAMES = (
 // Hardcoding the list in both places is most convenient and most performant.
 // We could encode the list in the SSR rendering but that means the client side
 // code needs to depend on having access to the `window` global first.
-export const VALID_LOCALES = new Set([
-  "de",
-  "en-US",
-  "es",
-  "fr",
-  "ja",
-  "ko",
-  "pl",
-  "pt-BR",
-  "ru",
-  "zh-CN",
-  "zh-TW",
-]);
+export const VALID_LOCALES = new Set(["en-US"]);
 
 export const ENABLE_PLUS = Boolean(
   JSON.parse(process.env.REACT_APP_ENABLE_PLUS || "false")
@@ -48,7 +36,7 @@ export const FXA_SIGNIN_URL = process.env.REACT_APP_FXA_SIGNIN_URL || "";
 export const FXA_SETTINGS_URL = process.env.REACT_APP_FXA_SETTINGS_URL || "";
 
 export const DEFAULT_GEO_COUNTRY =
-  process.env.REACT_APP_DEFAULT_GEO_COUNTRY || "United States";
+  process.env.REACT_APP_DEFAULT_GEO_COUNTRY || "India";
 
 export const IEX_DOMAIN =
   process.env.REACT_APP_INTERACTIVE_EXAMPLES_BASE_URL ||

@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+//import { useLocation } from "react-router-dom";
 
 import { useLocale } from "../../../hooks";
 
@@ -7,11 +7,11 @@ import { useLocale } from "../../../hooks";
 // import { ReactComponent as MDNLogo } from "../../../assets/mdn-logo.svg";
 
 import "./index.scss";
-import { isDocs, isPlus } from "../../../utils";
+//import { isDocs, isPlus } from "../../../utils";
 
 export function Logo() {
   const locale = useLocale();
-  const location = useLocation();
+  //const location = useLocation();
 
   // const plus = isPlus(location.pathname);
   // const docs = isDocs(location.pathname);

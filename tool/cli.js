@@ -705,7 +705,7 @@ ${dntHelperCode}
 // only load GA if DNT is not enabled
 if (Mozilla && !Mozilla.dntEnabled()) {
     window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-    ga('create', '${account}', 'mozilla.org');
+    ga('create', '${account}', 'technobureau.com');
     ga('set', 'anonymizeIp', true);
     ga('send', 'pageview');
 

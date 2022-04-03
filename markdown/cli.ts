@@ -58,7 +58,7 @@ function saveProblemsReport(problems: Map<any, any>) {
   let problemCount = 0;
   for (const [url, { offset, invalid, unhandled }] of Array.from(problems)) {
     problemCount += invalid.length + unhandled.length;
-    report.push(`### [${url}](https://developer.mozilla.org${url})`);
+    report.push(`### [${url}](https://technobureau.com${url})`);
 
     const elementWithPosition = (node) => {
       const { type, position } = node;

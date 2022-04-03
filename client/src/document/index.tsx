@@ -162,17 +162,6 @@ export function Document(props /* TODO: define a TS interface for this */) {
   return (
     <>
       <ArticleActionsContainer doc={doc} />
-      {doc.isTranslated ? (
-        <div className="container">
-          <LocalizedContentNote isActive={doc.isActive} locale={locale} />
-        </div>
-      ) : (
-        searchParams.get("retiredLocale") && (
-          <div className="container">
-            <RetiredLocaleNote />
-          </div>
-        )
-      )}
       <div className="article-wrapper">
         <RenderSideBar doc={doc} />
 

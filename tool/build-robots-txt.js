@@ -10,7 +10,7 @@ const { ALWAYS_ALLOW_ROBOTS } = require("../build/constants");
 
 const ALLOW_TEXT = `
 User-agent: *
-Sitemap: https://developer.mozilla.org/sitemap.xml
+Sitemap: https://technobureau.com/sitemap.xml
 
 Disallow: /api/
 Disallow: /*/files/

@@ -12,67 +12,85 @@ export function Homepage(props) {
           <h2 className="mdn-ui-emphasis-l">Featured Articles</h2>
           <div className="tile-container">
             <div className="article-tile">
-              <a href={`/${locale}/docs/Learn/HTML`} className="tile-tag">
-                HTML
+              <a href={`/${locale}/docs/Learn/Linux`} className="tile-tag">
+                Linux
               </a>
               <a
-                href={`/${locale}/docs/Learn/HTML/Introduction_to_HTML/`}
+                href={`/${locale}/docs/Learn/Linux/Booting_Process/`}
                 className="tile-title expand-this-link"
               >
-                Introduction to HTML
+                Linux Booting Process
               </a>
               <p>
-                At its heart, HTML is a fairly simple language made up of
-                elements, which can be applied to pieces of text to give them
-                different meaning in a document (Is it a paragraph? Is it a
-                bulleted list? Is it part of a table?), structure a document
-                into logical sections (Does it have a header? Three columns of
-                content? A navigation menu?), and embed content such as images
-                and videos into a page. This module will introduce the first two
-                of these and introduce fundamental concepts and syntax you need
-                to know to understand HTML.
+                Booting Process is the sequence process of Booting the computer
+                system.And it includes the list of process performed by the
+                computer hardware/software from the time of "Power-On" to the
+                load Operating System completely ready for users to run
+                applications.And below are the list of step by step process
+                involved in Booting Process.
+              </p>
+              <p>* Power Supply</p>
+              <p>* Basic Input Output System -BIOS</p>
+              <p>* Booting Record/Partition Table</p>
+              <p>* Bootloader - GRUB</p>
+              <p>* Kernel</p>
+              <p>* Init</p>
+              <p>* RunLevel Programs</p>
+            </div>
+
+            <div className="article-tile">
+              <a href={`/${locale}/docs/Tools/Ansible`} className="tile-tag">
+                Ansible
+              </a>
+              <a
+                href={`/${locale}/docs/Tools/Ansible/`}
+                className="tile-title expand-this-link"
+              >
+                About Ansible
+              </a>
+              <p>
+                Ansible is an open-source software provisioning, configuration
+                management, and application-deployment tool enabling
+                infrastructure as code. It runs on many Unix-like systems, and
+                can configure both Unix-like systems as well as Microsoft
+                Windows.
               </p>
             </div>
 
             <div className="article-tile">
-              <a href={`/${locale}/docs/Learn/CSS`} className="tile-tag">
-                CSS
+              <a href={`/${locale}/docs/Learn/Linux`} className="tile-tag">
+                Linux
               </a>
               <a
-                href={`/${locale}/docs/Learn/CSS/First_steps/`}
+                href={`/${locale}/docs/Learn/Linux/Introduction_About_Computer_Network/`}
                 className="tile-title expand-this-link"
               >
-                CSS first steps
+                Introduction About Computer Network
               </a>
               <p>
-                CSS (Cascading Style Sheets) is used to style and lay out web
-                pages — for example, to alter the font, color, size, and spacing
-                of your content, split it into multiple columns, or add
-                animations and other decorative features.
-                <br /> This module provides a gentle beginning to your path
-                towards CSS mastery with the basics of how it works, what the
-                syntax looks like, and how you can start using it to add styling
-                to HTML.
+                "A Computer network or data network is a telecommunications
+                network that allows computers to exchange data. In computer
+                networks, networked computing devices pass data to each other
+                along different data connections. Data is transferred in the
+                form of packets by using encoding and decoding standards."
               </p>
-            </div>
-
-            <div className="article-tile">
-              <a href={`/${locale}/docs/Learn/JavaScript`} className="tile-tag">
-                JavaScript
-              </a>
-              <a
-                href={`/${locale}/docs/Learn/JavaScript/First_steps`}
-                className="tile-title expand-this-link"
-              >
-                JavaScript First Steps
-              </a>
               <p>
-                In our first JavaScript module, we first answer some fundamental
-                questions such as "what is JavaScript?", "what does it look
-                like?", and "what can it do?", before moving on to taking you
-                through your first practical experience of writing JavaScript.
-                After that, we discuss some key building blocks in detail, such
-                as variables, strings, numbers and arrays.
+                Network computer devices that originate, route and terminate the
+                data are called network nodes. Nodes can include hosts such as
+                personal computers, phones, servers as well as networking
+                hardware. Two such devices are said to be networked together
+                when one device is able to exchange information with the other
+                device, whether or not they have a direct connection to each
+                other.
+              </p>
+              <p>
+                Computer networks support applications such as access to the
+                World Wide Web, shared use of application and storage
+                servers,printers, and fax machines, and use of email and instant
+                messaging applications. Computer networks differ in the physical
+                media used to transmit their signals, the communications
+                protocols to organize network traffic, the network's size,
+                topology and organizational intent.
               </p>
             </div>
           </div>

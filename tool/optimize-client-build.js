@@ -36,7 +36,7 @@ async function runOptimizeClientBuild(buildRoot) {
       // Yes, this makes it a bit weird to use a build of this on a dev,
       // stage, preview, or a local build. Especially if the hashed URL doesn't
       // always work. But it's a fair price to pay.
-      hrefPrefix = "https://developer.mozilla.org";
+      hrefPrefix = "https://technobureau.com";
     } else {
       href = element.attribs.href;
       if (!href) {
