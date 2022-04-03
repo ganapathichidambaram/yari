@@ -25,10 +25,10 @@ const NEW_ISSUE_TEMPLATE = `
 
 <!-- Do not make changes below this line -->
 <details>
-<summary>MDN page report details</summary>
+<summary>page report details</summary>
 
 * Query: \`$QUERY_ID\`
-* MDN URL: https://developer.mozilla.org$PATHNAME
+* MDN URL: https://technobureau.com$PATHNAME
 * Report started: $DATE
 
 </details>
