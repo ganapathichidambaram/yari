@@ -1,6 +1,9 @@
 import "./index.scss";
 import { useLocation } from "react-router-dom";
 
+//import { ReactComponent as MDNLogo } from "../../../assets/mdn-footer-logo.svg";
+//import { ReactComponent as MozLogo } from "../../../assets/moz-logo.svg";
+//import { PLUS_IS_ENABLED } from "../../../constants";
 const DARK_NAV_ROUTES = [/\/plus\/?$/i];
 
 export function Footer() {

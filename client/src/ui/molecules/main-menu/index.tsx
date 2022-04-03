@@ -4,6 +4,7 @@ import { GuidesMenu } from "../guides-menu";
 import { ToolsMenu } from "../tools-menu";
 
 import "./index.scss";
+//import { PLUS_IS_ENABLED } from "../../../constants";
 
 export default function MainMenu({ isOpenOnMobile }) {
   const previousActiveElement = useRef<null | HTMLButtonElement>(null);

@@ -253,4 +253,4 @@ app.get("/*", async (req, res) => {
 });
 
 const PORT = parseInt(process.env.SERVER_PORT || "5042");
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+app.listen(PORT, "127.0.0.1", () => console.log(`Listening on port ${PORT}`));

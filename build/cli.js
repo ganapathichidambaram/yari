@@ -168,11 +168,12 @@ async function buildDocuments(
           // The `.releases` block contains information about browsers (e.g
           // release dates) and that part has already been extracted and put
           // next to each version number where appropriate.
+          // Therefore, we strip out all "retired" releases.
           if (key === "releases") {
-            return undefined;
+            return Object.fromEntries(
+              Object.entries(value).filter(([, v]) => v.status !== "retired")
+            );
           }
-          // TODO: Instead of serializing with a exclusion, instead explicitly
-          // serialize exactly only the data that is needed.
           return value;
         })
       );
@@ -227,11 +228,11 @@ async function buildDocuments(
       locale.toLowerCase()
     );
     fs.mkdirSync(sitemapDir, { recursive: true });
-    const sitemapFilePath = path.join(sitemapDir, "sitemap.xml");
+    const sitemapFilePath = path.join(sitemapDir, "sitemap.xml.gz");
     fs.writeFileSync(
       sitemapFilePath,
-      makeSitemapXML(locale, docs)
-      //zlib.gzipSync(makeSitemapXML(locale, docs))
+      //makeSitemapXML(locale, docs)
+      zlib.gzipSync(makeSitemapXML(locale, docs))
     );
     sitemapsBuilt.push(sitemapFilePath);
   }

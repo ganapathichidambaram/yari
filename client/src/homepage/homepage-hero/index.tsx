@@ -11,7 +11,7 @@ export function HomepageHero() {
           A System will provide technical information through guides and tools
           for various topic such as Linux, Docker, Ansible and other DevOps.
         </p>
-        <Search id="hp-search" />
+        <Search id="hp-search" isHomepageSearch={true} />
       </section>
       <Mandala rotate={true} extraClasses="homepage-hero-bg" />
     </div>

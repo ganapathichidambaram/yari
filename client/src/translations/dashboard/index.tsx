@@ -213,7 +213,7 @@ export function TranslationDashboard() {
       )}
     </Container>
   );
-  /* 
+  /*
      );
     }
  */
@@ -479,7 +479,7 @@ function DocumentsTable({
               }
             })
             .map((documentDetail) => {
-              const url = "https://developer.mozilla.org" + documentDetail.url;
+              const url = "https://technobureau.com" + documentDetail.url;
               const englishCommitHash =
                 documentDetail.info.defaultLocaleInfo.commitURL
                   .split("commit/")[1]

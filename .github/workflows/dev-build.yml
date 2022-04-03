@@ -55,6 +55,8 @@ jobs:
         with:
           repository: mdn/translated-content
           path: mdn/translated-content
+          # See matching warning for mdn/content checkout step
+          fetch-depth: 0
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
@@ -62,7 +64,7 @@ jobs:
           node-version: "12"
 
       - name: Cache node_modules
-        uses: actions/cache@v2.1.7
+        uses: actions/cache@v3
         id: cached-node_modules
         with:
           path: |

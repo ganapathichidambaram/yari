@@ -19,8 +19,8 @@
     "report": "https://github.com/mdn/yari/issues/new"
   },
   "urls": {
-    "prod": "https://developer.mozilla.org/",
-    "stage": "https://developer.allizom.org/"
+    "prod": "https://technobureau.com/",
+    "stage": "https://technobureau.com/"
   },
   "keywords": ["react", "node", "scss", "typescript", "staticsite"]
 }

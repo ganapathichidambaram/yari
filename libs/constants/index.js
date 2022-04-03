@@ -82,6 +82,7 @@ const scriptSrcValues = [
 
   "assets.codepen.io",
   "production-assets.codepen.io",
+  "technobureau.com",
 
   "'sha256-CUy3BwqnmCSHS96nUyHoUsOB3r+s10eRpf5GbZdZqgk='", // inline no flicker
 ];
@@ -95,6 +96,9 @@ const CSP_DIRECTIVES = {
   "connect-src": [
     "'self'",
 
+    "updates.technobureau.com",
+    "updates.technobureau.com",
+    "technobureau.com",
     "www.google-analytics.com",
     "stats.g.doubleclick.net",
   ],
@@ -107,7 +111,7 @@ const CSP_DIRECTIVES = {
     "interactive-examples.stage.mdn.mozilla.net",
     "mdn.github.io",
     "yari-demos.prod.mdn.mozit.cloud",
-    "mdn.mozillademos.org",
+    "technobureau.com",
     "yari-demos.stage.mdn.mozit.cloud",
 
     "jsfiddle.net",
@@ -120,7 +124,9 @@ const CSP_DIRECTIVES = {
     // Avatars
     "*.githubusercontent.com",
     "*.googleusercontent.com",
+    "*.gravatar.com",
     "mozillausercontent.com",
+    "technobureau.com",
     "profile.stage.mozaws.net",
     "profile.accounts.firefox.com",
 
@@ -140,7 +146,8 @@ const CSP_DIRECTIVES = {
   ],
   "manifest-src": ["'self'"],
   "media-src": ["'self'", "archive.org", "videos.cdn.mozilla.net"],
-  "worker-src": ["'none'"],
+  "child-src": ["'self'"],
+  "worker-src": ["'self'"],
 };
 
 const cspToString = (csp) =>

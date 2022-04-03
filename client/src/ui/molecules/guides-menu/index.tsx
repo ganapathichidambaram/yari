@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 
 import { useLocale } from "../../../hooks";
+import InternalLink from "../../atoms/internal-link";
 import { Submenu } from "../submenu";
 
 import "./index.scss";
@@ -15,10 +15,10 @@ export const GuidesMenu = ({ visibleSubMenuId, toggleMenu }) => {
     items: [
       {
         description: "Learning Technology",
-        extraClasses: "apis-link-container",
+        extraClasses: "apis-link-container mobile-only",
         hasIcon: true,
         iconClasses: "submenu-icon learn",
-        label: "Learning Area",
+        label: " Learning Area",
         url: `/${locale}/docs/Learn`,
       },
       {
@@ -56,14 +56,14 @@ export const GuidesMenu = ({ visibleSubMenuId, toggleMenu }) => {
         {menu.label}
       </button>
 
-      <Link
-        to={`/${locale}/docs/Learn/`}
+      <InternalLink
+        to={`/${locale}/docs/Learn`}
         className="top-level-entry"
         // @ts-ignore
         onClick={() => document?.activeElement?.blur()}
       >
         Guides
-      </Link>
+      </InternalLink>
 
       <Submenu menuEntry={menu} defaultHidden={!isOpen} />
     </li>
