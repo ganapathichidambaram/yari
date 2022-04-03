@@ -128,7 +128,6 @@ function BreadcrumbURI({
 }
 
 type InnerSearchNavigateWidgetProps = SearchProps & {
-  onCloseSearch?: () => void;
   onResultPicked?: () => void;
   defaultSelection: [number, number];
 };
@@ -164,7 +163,6 @@ function InnerSearchNavigateWidget(props: InnerSearchNavigateWidgetProps) {
     onChangeInputValue,
     isFocused,
     onChangeIsFocused,
-    onCloseSearch,
     onResultPicked,
     defaultSelection,
   } = props;
@@ -196,7 +194,7 @@ function InnerSearchNavigateWidget(props: InnerSearchNavigateWidgetProps) {
 
   const resultItems: ResultItem[] = useMemo(() => {
     if (!searchIndex || !inputValue || searchIndexError) {
-      // This can happen if the initialized hasn't completed yet or
+      // This can happen if the initialization hasn't completed yet or
       // completed un-successfully.
       return [];
     }
@@ -379,7 +377,21 @@ function InnerSearchNavigateWidget(props: InnerSearchNavigateWidgetProps) {
                   index: i,
                 })}
               >
-                {resultsWithHighlighting[i]}
+                <a
+                  href={item.url}
+                  onClick={(event: React.MouseEvent) => {
+                    if (event.ctrlKey || event.metaKey) {
+                      // Open in new tab, don't navigate current tab.
+                      event.stopPropagation();
+                    } else {
+                      // Open in same tab, navigate via combobox.
+                      event.preventDefault();
+                    }
+                  }}
+                  tabIndex={-1}
+                >
+                  {resultsWithHighlighting[i]}
+                </a>
               </div>
             )),
             <div
@@ -443,7 +455,9 @@ function InnerSearchNavigateWidget(props: InnerSearchNavigateWidgetProps) {
           onFocus: () => {
             onChangeIsFocused(true);
           },
-          onBlur: () => onChangeIsFocused(false),
+          onBlur: () => {
+            onChangeIsFocused(false);
+          },
           onKeyDown(event) {
             if (event.key === "Escape" && inputRef.current) {
               onChangeInputValue("");
@@ -473,20 +487,20 @@ function InnerSearchNavigateWidget(props: InnerSearchNavigateWidgetProps) {
 
       <Button
         type="action"
+        icon="cancel"
+        extraClasses="clear-search-button"
+        onClickHandler={() => onChangeInputValue("")}
+      >
+        <span className="visually-hidden">Clear search input</span>
+      </Button>
+
+      <Button
+        type="action"
         icon="search"
         buttonType="submit"
         extraClasses="search-button"
       >
         <span className="visually-hidden">Search</span>
-      </Button>
-
-      <Button
-        type="action"
-        icon="cancel"
-        extraClasses="close-search-button"
-        onClickHandler={onCloseSearch}
-      >
-        <span className="visually-hidden">Close search</span>
       </Button>
 
       <div {...getMenuProps()}>

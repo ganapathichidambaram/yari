@@ -399,78 +399,78 @@ program
     })
   )
 
-  // .command(
-  //   "gather-git-history",
-  //   "Extract all last-modified dates from the git logs"
-  // )
-  // .option("--save-history <path>", "File to save all previous history")
-  // .option("--load-history <path>", "Optional file to load all previous history")
-  // .action(
-  //   tryOrExit(async ({ options }) => {
-  //     const { saveHistory, loadHistory, verbose } = options;
-  //     if (loadHistory) {
-  //       if (fs.existsSync(loadHistory)) {
-  //         console.log(
-  //           chalk.yellow(`Reusing existing history from ${loadHistory}`)
-  //         );
-  //       }
-  //     }
-  //     const roots = [CONTENT_ROOT];
-  //     if (CONTENT_TRANSLATED_ROOT) {
-  //       roots.push(CONTENT_TRANSLATED_ROOT);
-  //     }
-  //     const map = gatherGitHistory(
-  //       roots,
-  //       loadHistory && fs.existsSync(loadHistory) ? loadHistory : null
-  //     );
-  //     const historyPerLocale = {};
+  .command(
+    "gather-git-history",
+    "Extract all last-modified dates from the git logs"
+  )
+  .option("--save-history <path>", "File to save all previous history")
+  .option("--load-history <path>", "Optional file to load all previous history")
+  .action(
+    tryOrExit(async ({ options }) => {
+      const { saveHistory, loadHistory, verbose } = options;
+      if (loadHistory) {
+        if (fs.existsSync(loadHistory)) {
+          console.log(
+            chalk.yellow(`Reusing existing history from ${loadHistory}`)
+          );
+        }
+      }
+      const roots = [CONTENT_ROOT];
+      if (CONTENT_TRANSLATED_ROOT) {
+        roots.push(CONTENT_TRANSLATED_ROOT);
+      }
+      const map = gatherGitHistory(
+        roots,
+        loadHistory && fs.existsSync(loadHistory) ? loadHistory : null
+      );
+      const historyPerLocale = {};
 
-  //     // Someplace to put the map into an object so it can be saved into `saveHistory`
-  //     const allHistory = {};
-  //     for (const [relPath, value] of map) {
-  //       const locale = relPath.split(path.sep)[0];
-  //       if (!VALID_LOCALES.has(locale)) {
-  //         continue;
-  //       }
-  //       allHistory[relPath] = value;
-  //       if (!historyPerLocale[locale]) {
-  //         historyPerLocale[locale] = {};
-  //       }
-  //       historyPerLocale[locale][relPath] = value;
-  //     }
-  //     let filesWritten = 0;
-  //     for (const [locale, history] of Object.entries(historyPerLocale)) {
-  //       const root = getRoot(locale);
-  //       const outputFile = path.join(root, locale, "_githistory.json");
-  //       fs.writeFileSync(outputFile, JSON.stringify(history, null, 2), "utf-8");
-  //       filesWritten += 1;
-  //       if (verbose) {
-  //         console.log(
-  //           chalk.green(
-  //             `Wrote '${locale}' ${Object.keys(
-  //               history
-  //             ).length.toLocaleString()} paths into ${outputFile}`
-  //           )
-  //         );
-  //       }
-  //     }
-  //     console.log(chalk.green(`Wrote ${filesWritten} _githistory.json files`));
-  //     if (saveHistory) {
-  //       fs.writeFileSync(
-  //         saveHistory,
-  //         JSON.stringify(allHistory, null, 2),
-  //         "utf-8"
-  //       );
-  //       console.log(
-  //         chalk.green(
-  //           `Saved ${Object.keys(
-  //             allHistory
-  //           ).length.toLocaleString()} paths into ${saveHistory}`
-  //         )
-  //       );
-  //     }
-  //   })
-  // )
+      // Someplace to put the map into an object so it can be saved into `saveHistory`
+      const allHistory = {};
+      for (const [relPath, value] of map) {
+        const locale = relPath.split(path.sep)[0];
+        if (!VALID_LOCALES.has(locale)) {
+          continue;
+        }
+        allHistory[relPath] = value;
+        if (!historyPerLocale[locale]) {
+          historyPerLocale[locale] = {};
+        }
+        historyPerLocale[locale][relPath] = value;
+      }
+      let filesWritten = 0;
+      for (const [locale, history] of Object.entries(historyPerLocale)) {
+        const root = getRoot(locale);
+        const outputFile = path.join(root, locale, "_githistory.json");
+        fs.writeFileSync(outputFile, JSON.stringify(history, null, 2), "utf-8");
+        filesWritten += 1;
+        if (verbose) {
+          console.log(
+            chalk.green(
+              `Wrote '${locale}' ${Object.keys(
+                history
+              ).length.toLocaleString()} paths into ${outputFile}`
+            )
+          );
+        }
+      }
+      console.log(chalk.green(`Wrote ${filesWritten} _githistory.json files`));
+      if (saveHistory) {
+        fs.writeFileSync(
+          saveHistory,
+          JSON.stringify(allHistory, null, 2),
+          "utf-8"
+        );
+        console.log(
+          chalk.green(
+            `Saved ${Object.keys(
+              allHistory
+            ).length.toLocaleString()} paths into ${saveHistory}`
+          )
+        );
+      }
+    })
+  )
 
   .command(
     "sync-translated-content",
@@ -609,59 +609,59 @@ program
     })
   )
 
-  // .command(
-  //   "popularities",
-  //   "Convert an AWS Athena log aggregation CSV into a popularities.json file"
-  // )
-  // .option("--outfile <path>", "output file", {
-  //   default: path.resolve(path.join(__dirname, "..", "popularities.json")),
-  // })
-  // .option("--max-uris <number>", "limit to top <number> entries", {
-  //   default: MAX_GOOGLE_ANALYTICS_URIS,
-  // })
-  // .option("--refresh", "download again even if exists", {
-  //   default: false,
-  // })
-  // .action(
-  //   tryOrExit(async ({ options, logger }) => {
-  //     const { refresh, outfile } = options;
-  //     if (!refresh && fs.existsSync(outfile)) {
-  //       const stat = fs.statSync(outfile);
-  //       logger.info(
-  //         chalk.yellow(
-  //           `Reusing exising ${outfile} (${stat.mtime}) for popularities.`
-  //         )
-  //       );
-  //       logger.info(
-  //         `Reset ${outfile} by running: yarn tool popularities --refresh`
-  //       );
-  //       return;
-  //     }
-  //     const { rowCount, popularities, pageviews } =
-  //       await runMakePopularitiesFile(options);
-  //     logger.info(chalk.green(`Parsed ${rowCount.toLocaleString()} rows.`));
+  .command(
+    "popularities",
+    "Convert an AWS Athena log aggregation CSV into a popularities.json file"
+  )
+  .option("--outfile <path>", "output file", {
+    default: path.resolve(path.join(__dirname, "..", "popularities.json")),
+  })
+  .option("--max-uris <number>", "limit to top <number> entries", {
+    default: MAX_GOOGLE_ANALYTICS_URIS,
+  })
+  .option("--refresh", "download again even if exists", {
+    default: false,
+  })
+  .action(
+    tryOrExit(async ({ options, logger }) => {
+      const { refresh, outfile } = options;
+      if (!refresh && fs.existsSync(outfile)) {
+        const stat = fs.statSync(outfile);
+        logger.info(
+          chalk.yellow(
+            `Reusing exising ${outfile} (${stat.mtime}) for popularities.`
+          )
+        );
+        logger.info(
+          `Reset ${outfile} by running: yarn tool popularities --refresh`
+        );
+        return;
+      }
+      const { rowCount, popularities, pageviews } =
+        await runMakePopularitiesFile(options);
+      logger.info(chalk.green(`Parsed ${rowCount.toLocaleString()} rows.`));
 
-  //     const numberKeys = Object.keys(popularities).length;
-  //     logger.info(
-  //       chalk.green(`Wrote ${numberKeys.toLocaleString()} pages' popularities.`)
-  //     );
+      const numberKeys = Object.keys(popularities).length;
+      logger.info(
+        chalk.green(`Wrote ${numberKeys.toLocaleString()} pages' popularities.`)
+      );
 
-  //     logger.debug("25 most popular URIs...");
-  //     pageviews.slice(0, 25).forEach(([uri, popularity], i) => {
-  //       logger.debug(
-  //         `${`${i}`.padEnd(2)} ${uri.padEnd(75)} ${popularity.toFixed(5)}`
-  //       );
-  //     });
-  //     function fmtBytes(bytes) {
-  //       return `${(bytes / 1024 / 1024).toFixed(1)}MB`;
-  //     }
-  //     logger.info(
-  //       chalk.green(
-  //         `${options.outfile} is ${fmtBytes(fs.statSync(options.outfile).size)}`
-  //       )
-  //     );
-  //   })
-  // )
+      logger.debug("25 most popular URIs...");
+      pageviews.slice(0, 25).forEach(([uri, popularity], i) => {
+        logger.debug(
+          `${`${i}`.padEnd(2)} ${uri.padEnd(75)} ${popularity.toFixed(5)}`
+        );
+      });
+      function fmtBytes(bytes) {
+        return `${(bytes / 1024 / 1024).toFixed(1)}MB`;
+      }
+      logger.info(
+        chalk.green(
+          `${options.outfile} is ${fmtBytes(fs.statSync(options.outfile).size)}`
+        )
+      );
+    })
+  )
 
   .command(
     "google-analytics-code",
