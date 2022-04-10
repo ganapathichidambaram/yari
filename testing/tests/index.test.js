@@ -180,7 +180,7 @@ test("content built foo page", () => {
   // Every page, should have a `link[rel=canonical]` whose `href` always
   // starts with 'https://developer.mozilla.org' and ends with doc's URL.
   expect($("link[rel=canonical]").attr("href")).toBe(
-    `https://developer.mozilla.org${doc.mdn_url}`
+    `https://technobureau.com${doc.mdn_url}`
   );
 
   expect($('meta[name="robots"]').attr("content")).toBe("index, follow");

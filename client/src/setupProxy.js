@@ -5,9 +5,10 @@ const SERVER_PORT = process.env.SERVER_PORT || 5042;
 console.log(`Setting up a Proxy to localhost:${SERVER_PORT}`);
 module.exports = function (app) {
   const proxy = createProxyMiddleware(["!**/*.hot-update.json"], {
-    target: `http://localhost:${SERVER_PORT}`,
+    target: `http://127.0.0.1:${SERVER_PORT}`,
     changeOrigin: true,
   });
+  //app.use("/api", proxy);
   app.use("/api", proxy);
   app.use("/users", proxy);
   app.use("/_+(flaws|translations|open|document|traits)", proxy);

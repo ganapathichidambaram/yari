@@ -13,14 +13,14 @@ export const ToolsMenu = ({ visibleSubMenuId, toggleMenu }) => {
     label: "Tools",
     id: "tools",
     items: [
-      {
-        description: "Learning Various Tools",
-        extraClasses: "apis-link-container",
-        hasIcon: true,
-        iconClasses: "submenu-icon learn",
-        label: "Tools Area",
-        url: `/${locale}/docs/Tools`,
-      },
+      // {
+      //   description: "Learning Various Tools",
+      //   extraClasses: "apis-link-container",
+      //   hasIcon: true,
+      //   iconClasses: "submenu-icon learn",
+      //   label: "Tools Area",
+      //   url: `/${locale}/docs/Tools`,
+      // },
       {
         description: "Snippets and tools for Ansible Automation",
         extraClasses: "css-link-container",

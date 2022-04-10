@@ -19,7 +19,7 @@ import { SpecificationSection } from "./ingredients/spec-section";
 // Misc
 // Sub-components
 import { ArticleActionsContainer } from "../ui/organisms/article-actions-container";
-import { LocalizedContentNote } from "./molecules/localized-content-note";
+//import { LocalizedContentNote } from "./molecules/localized-content-note";
 import { OfflineStatusBar } from "../ui/molecules/offline-status-bar";
 import { TOC } from "./organisms/toc";
 import { RenderSideBar } from "./organisms/sidebar";
@@ -48,7 +48,7 @@ export function Document(props /* TODO: define a TS interface for this */) {
 
   const mountCounter = React.useRef(0);
   const documentURL = useDocumentURL();
-  const { locale } = useParams();
+  //const { locale } = useParams();
   const [searchParams] = useSearchParams();
 
   const navigate = useNavigate();
@@ -178,9 +178,7 @@ export function Document(props /* TODO: define a TS interface for this */) {
       {!isServer && <OfflineStatusBar />}
 
       {doc.isTranslated ? (
-        <div className="container">
-          <LocalizedContentNote isActive={doc.isActive} locale={locale} />
-        </div>
+        <div className="container"></div>
       ) : (
         searchParams.get("retiredLocale") && (
           <div className="container">
@@ -188,6 +186,7 @@ export function Document(props /* TODO: define a TS interface for this */) {
           </div>
         )
       )}
+
       <div className="article-wrapper">
         <RenderSideBar doc={doc} />
 

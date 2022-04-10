@@ -22,7 +22,7 @@ const LANGUAGES = new Map(
 const SORT_OPTIONS = [
   ["best", "Best"],
   ["relevance", "Relevance"],
-  ["popularity", "Popularity"],
+  //["popularity", "Popularity"],
 ];
 
 type Highlight = {
@@ -37,7 +37,7 @@ interface Document {
   highlight: Highlight;
   summary: string;
   score: number;
-  popularity: number;
+  //popularity: number;
 }
 
 type Total = {
@@ -385,7 +385,6 @@ function Results({
               {searchParams.get("debug") !== null && (
                 <span className="nerd-data">
                   <b>score:</b> <code>{document.score}</code>,{" "}
-                  <b>popularity:</b> <code>{document.popularity}</code>,{" "}
                 </span>
               )}
             </li>

@@ -13,14 +13,14 @@ export const GuidesMenu = ({ visibleSubMenuId, toggleMenu }) => {
     label: "Guides",
     id: "guides",
     items: [
-      {
-        description: "Learning Technology",
-        extraClasses: "apis-link-container mobile-only",
-        hasIcon: true,
-        iconClasses: "submenu-icon learn",
-        label: " Learning Area",
-        url: `/${locale}/docs/Learn`,
-      },
+      // {
+      //   description: "Learning Technology",
+      //   extraClasses: "apis-link-container mobile-only",
+      //   hasIcon: true,
+      //   iconClasses: "submenu-icon learn",
+      //   label: " Learning Area",
+      //   url: `/${locale}/docs/Learn`,
+      // },
       {
         description: "Learn various Linux technologies , packages",
         extraClasses: "javascript-link-container",
